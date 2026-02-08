@@ -1,7 +1,7 @@
 # pyHeap — Binary Heap (Min-Heap & Max-Heap)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/python-3.17%2B-blue)
 ![Heap](https://img.shields.io/badge/data--structure-heap-purple)
-![Type](https://img.shields.io/badge/heap-min%20%7C%20max-green)
+![Type](https://img.shields.io/badge/heap-min%20%7C%20max-red)
 ![License](https://img.shields.io/badge/license-MIT-black)
 
 An extensible and efficient binary heap implementation supporting **both Min-Heap and Max-Heap behavior** from a single class.
