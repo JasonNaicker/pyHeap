@@ -15,7 +15,7 @@ An extensible and efficient binary heap implementation supporting **both Min-Hea
 
 ---
 
-## Features
+>## Features
 
 - Supports **Min-Heap** and **Max-Heap**
 - Build heap in **O(n)** time
@@ -26,7 +26,7 @@ An extensible and efficient binary heap implementation supporting **both Min-Hea
 
 ---
 
-## Time Complexity Chart:
+>## Time Complexity Chart:
 
 | Operation    | Complexity     |
 | ------------ | -------------- |
@@ -37,6 +37,7 @@ An extensible and efficient binary heap implementation supporting **both Min-Hea
 | `replace`    | O(n) + heapify |
 | `push_pop`   | O(log n)       |
 
+---
 
 >## User Example
 
@@ -71,8 +72,9 @@ heap.display_contents()  # Tree-style layout
   8    5
  3  1  2
 ```
+---
 
-## Benchmarks(1,000,000 Heap Size / 1000 Iterations):
+>## Benchmarks(1,000,000 Heap Size / 1000 Iterations):
 ```python
 Operation                 Iterations   Total(s)     Avg(s)        Min(s)        Max(s)        StdDev
 ---------------------------------------------------------------------------------------------------
