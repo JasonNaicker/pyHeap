@@ -76,9 +76,11 @@ heap.display_contents()  # Tree-style layout
   8    5
  3  1  2
 ```
+
 ---
 
 >## Benchmarks(1,000,000 Heap Size / 1000 Iterations):
+
 ```python
 Operation                 Iterations   Total(s)     Avg(s)        Min(s)        Max(s)        StdDev
 ---------------------------------------------------------------------------------------------------
@@ -92,3 +94,95 @@ build_heap                      1000   588.0408   0.58804078   0.50645580   1.02
 
 > (Will transfer to .py eventually for full package support)
 
+---
+
+## Generic & Typed Support
+
+- Fully generic implementation: `Heap[T]`
+- Type hinted throughout
+- Uses `__slots__` for memory efficiency
+
+---
+
+## Custom Key Support
+
+Supports custom ordering logic using a `key` function:
+
+```python
+# Order by absolute value
+heap = Heap([-10, 4, -3, 7], isMinHeap=True, key=abs)
+
+print(heap.peek())  # -3
+```
+
+You can also heapify complex objects:
+
+```python
+heap = Heap(users, key=lambda user: user.score)
+```
+
+---
+
+## Merge Support
+
+Merge another heap or list into the current heap:
+
+```python
+h1 = Heap([1, 5, 9])
+h2 = Heap([2, 4, 6])
+
+h1.merge(h2)
+```
+
+- Accepts `Heap` or `list`
+- Rebuilds heap efficiently
+
+---
+
+## Top-K Utilities
+
+Efficient selection helpers:
+
+```python
+heap.nlargest(3)   # 3 largest elements
+heap.nsmallest(3)  # 3 smallest elements
+heap.peek_n(5)     # Top 5 without modifying heap
+```
+
+---
+
+## Additional Methods
+
+- `is_empty()`
+- `__iter__()`
+- `__contains__()`
+- `update_key()` (rebuilds heap with new ordering)
+
+---
+
+## Built-In Benchmark Suite
+
+The module includes an integrated benchmarking system:
+
+```python
+if __name__ == "__main__":
+    benchmark_heap(heap_size=100, iterations=1000, is_min_heap=True)
+```
+
+Benchmarked operations:
+
+- push  
+- pop  
+- peek  
+- push_pop  
+- replace  
+- merge  
+- nlargest  
+- nsmallest  
+- build_heap  
+
+---
+
+## License
+
+MIT License
